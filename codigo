@@ -1,0 +1,97 @@
+
+#include <stdio.h>
+
+int main() {
+    // Variaveis
+    int i, senha, opcao;
+    float nota, soma = 0, media;
+
+    // PARTE 1 - Cadastro de notas (FOR)
+    printf("===== CADASTRO DE NOTAS =====\n");
+
+    for (i = 1; i <= 5; i++) {
+        printf("Digite a nota do aluno %d: ", i);
+        scanf("%f", &nota);
+
+        soma += nota;
+    }
+
+    media = soma / 5;
+
+    printf("\nMedia da turma: %.2f\n", media);
+
+    // PARTE 2 - Senha de acesso (WHILE)
+    printf("\n===== AUTENTICACAO =====\n");
+
+    printf("Digite a senha: ");
+    scanf("%d", &senha);
+
+    while (senha != 1234) {
+        printf("Senha incorreta! Tente novamente: ");
+        scanf("%d", &senha);
+    }
+
+    printf("Acesso permitido!\n");
+
+    // PARTE 3 - Menu interativo (DO WHILE)
+    do {
+        printf("\n===== MENU =====\n");
+        printf("1 - Consultar media\n");
+        printf("2 - Exibir mensagem de boas-vindas\n");
+        printf("3 - Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Media da turma: %.2f\n", media);
+                break;
+
+            case 2:
+                printf("Bem-vindo ao sistema escolar!\n");
+                break;
+
+            case 3:
+                printf("Encerrando o programa...\n");
+                break;
+
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
+        }
+
+    } while (opcao != 3);
+
+    // PARTE 4 - Demonstracao das estruturas
+    printf("\n===== PARTE 4 - ESTRUTURAS DE REPETICAO =====\n");
+
+    // WHILE
+    printf("\nUsando WHILE:\n");
+
+    i = 1;
+
+    while (i <= 5) {
+        printf("%d ", i);
+        i++;
+    }
+
+    // FOR
+    printf("\n\nUsando FOR:\n");
+
+    for (i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+
+    // DO WHILE
+    printf("\n\nUsando DO WHILE:\n");
+
+    i = 1;
+
+    do {
+        printf("%d ", i);
+        i++;
+    } while (i <= 5);
+
+    printf("\n\nPrograma finalizado!\n");
+
+    return 0;
+}
